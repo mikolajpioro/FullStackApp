@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Layout</title>
+        <link rel="stylesheet" href = "{{url_for('static', path='style.css')}}">
+    </head>
+    <body>
+        <header class="site-header">
+            <div class="nav">
+                <p>Blog Page</p>
+                <button class="home-button">Home</button>
+                <button class="login-button">Login</button>
+                <button class="register-button">Register</button>
+                <p>Theme(to do)</p>
+            </div>
+        </header>
+        <main>
+            {% block content %}
+            {% endblock content %}
+        </main>
+    </body>
+
+</html>
