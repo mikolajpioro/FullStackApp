@@ -6,3 +6,7 @@ import requests
 app = FastAPI()
 app.mount('/static', StaticFiles(directory='static'), name='static')
 template = Jinja2Templates(directory='templates')
+
+@app.get("/")
+def home():
+    return "hi"
