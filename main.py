@@ -12,7 +12,9 @@ posts: list[dict] = [
         "id": 1,
         "author": "John Lennon 123",
         "title": "Let's goooo",
-        "content": "Gold Gold Gold",
+        "content": "Hi. (I apologize for my bad English. I'm still learning and trying to improve my language skills. "
+                "Sometimes, I might make mistakes or choose the wrong words,"
+                " but I hope you can understand what I'm trying to say.)",
         "date_posted": "January 1, 2026"
     },
     {

@@ -1,0 +1,134 @@
+body {
+    background-color: rgb(54, 44, 45);
+    color: beige;
+    margin: 0%;
+    font-family: sans-serif;
+}
+
+.nav {
+    background-color: transparent; 
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    justify-content: space-between;
+    padding: 10px 50px;
+    height: 60px;
+    border-bottom: 2px solid beige;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.page-name {
+    font-weight: bold;
+    font-size: 20px;
+    font-family: Verdana;
+}
+
+.home-button {
+    color: beige;
+    background-color: transparent;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+}
+
+.login-button {
+    color: beige;
+    background-color: transparent;
+    border: 2px, solid, beige;
+    border-radius: 5px;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.register-button {
+    background-color: rgb(222, 158, 71);
+    border: 2px;
+    border-radius: 5px;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+nav button{
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: rgb(122, 66, 29);
+}
+
+a:hover {
+    background-color: rgb(122, 66, 29);
+}
+
+a {
+    border-radius: 5px;
+}
+
+
+.container {
+    background-color: rgb(66, 56, 57);
+    border-radius: 8px;
+    margin: 20px auto;
+    padding: 30px;    
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-left: 5%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.author {
+    color: rgb(222, 158, 71);
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+.date {
+    color: #ffffff;
+    opacity: 0.7;
+}
+
+.title {
+    color: beige;
+    text-decoration: none;
+    font-size: 30px;
+    margin: 5px 0;
+}
+
+.content {
+    color: beige;
+    margin: 0;
+    inline-size: 100%;
+    overflow-wrap: break-word;
+    word-break: break-all;
+}
+
+.author-and-date {
+    display: flex;
+    flex-direction: row;
+    font-size: 0.9rem;
+}
+
+.post-line {
+    border: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2); 
+    margin: 15px 0;
+    width: 100%;
+}

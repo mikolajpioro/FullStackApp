@@ -6,13 +6,17 @@
     </head>
     <body>
         <header class="site-header">
-            <div class="nav">
-                <p>Blog Page</p>
-                <button class="home-button">Home</button>
-                <button class="login-button">Login</button>
-                <button class="register-button">Register</button>
-                <p>Theme(to do)</p>
-            </div>
+            <nav class="nav">
+                <div class="nav-left">
+                    <p class="page-name">Blog Page</p>
+                    <button class="home-button">Home</button>
+                </div>
+                <div class="nav-right">
+                    <button class="login-button">Login</button>
+                    <button class="register-button">Register</button>
+                    <p>Theme(to do)</p>
+                </div>
+            </nav>
         </header>
         <main>
             {% block content %}
