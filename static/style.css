@@ -88,7 +88,8 @@ a {
 .container {
     background-color: rgb(66, 56, 57);
     border-radius: 8px;
-    margin: 20px auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
     padding: 30px;    
     display: flex;
     flex-direction: column;
@@ -143,9 +144,12 @@ a {
     width: 100%;
 }
 
-
-.stuff {
-    height: 700px;
-    width: 700px;
-    background-color: beige;
+.sidebar-container {
+    height: 350px;
+    width: 600px;
+    background-color: rgb(66, 56, 57);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    border-radius: 8px;
+    margin-top: 20px;
+    margin-right: 50px;
 }
