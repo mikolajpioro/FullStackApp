@@ -5,6 +5,11 @@ body {
     font-family: sans-serif;
 }
 
+main {
+    display: flex;
+    flex-direction: row;
+}
+
 .nav {
     background-color: transparent; 
     display: flex;
@@ -87,9 +92,14 @@ a {
     padding: 30px;    
     display: flex;
     flex-direction: column;
-    width: 50%;
-    margin-left: 5%;
+    width: 70%;
+    margin-left: 7%;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.posts-container {
+    display: flex;
+    flex-direction: column;
 }
 
 .author {
@@ -131,4 +141,11 @@ a {
     border-top: 1px solid rgba(255, 255, 255, 0.2); 
     margin: 15px 0;
     width: 100%;
+}
+
+
+.stuff {
+    height: 700px;
+    width: 700px;
+    background-color: beige;
 }
