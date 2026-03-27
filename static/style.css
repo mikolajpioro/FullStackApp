@@ -155,3 +155,38 @@ a {
     margin-right: 5%;
     margin-top: 20px;
 }
+
+.sidebar-container p {
+    font-size: 16px;
+    padding-left: 5%;
+    color: rgb(222, 158, 71);
+}
+
+h3 {
+    padding-left: 5%;
+    font-size: 25px;
+}
+
+.list-group {
+    margin-top: 20px;
+    list-style: none;
+}
+
+li {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 80%;
+    padding: 5px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+#list-first {
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+#list-last {
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
