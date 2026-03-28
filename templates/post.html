@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block content %}
+        <div class="container">
+            <div class="author-and-date">
+                <a class="author" href="#">{{ post.author }}</a>
+                <small class="date_posted">{{ post.date_posted }}</small>
+            </div>
+            <hr class="post-line">
+            <h2>
+            <a class="title" href="#">{{ post.title }}</a>
+            </h2>
+            <p class="content">{{ post.content }}</p>
+            <hr class="post-line">
+            <div class="post-buttons">
+                <button id="edit-button">Edit Post</button>
+                <button id="delet-button">Delete Post</button>
+            </div>
+        </div>
+{% endblock content %}
