@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="container">
+        <h1>
+            <a class="title" href="#">Oops... {{ status_code }}</a>
+        </h1>
+        <p class="content">{{ message }}</p>
+    </div>
+{% endblock content %}

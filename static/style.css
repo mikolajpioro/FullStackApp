@@ -199,5 +199,28 @@ li {
 .post-buttons button {
     padding: 5px;
     margin-right: 10px;
+    border-radius: 5px;
+    background-color: transparent;
+    font-weight: bold;
+}
+
+#edit-button {
+    color: beige;
+    border-color: beige;
+}
+
+#edit-button:hover {
+    color: rgb(222, 158, 71);
+    border-color: rgb(222, 158, 71);
+}
+
+#delete-button {
+    color: beige;
+    border-color: beige;
+}
+
+#delete-button:hover{
+    color: red;
+    border-color: red;
 }
 
