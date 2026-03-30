@@ -4,7 +4,8 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
 from starlette.exceptions import HTTPException as StarletteHTTPException
-import requests
+from schemas import PostCreate, PostResponse
+
 
 app = FastAPI()
 app.mount('/static', StaticFiles(directory='static'), name='static')
@@ -54,17 +55,38 @@ def post_page(request: Request, post_id: int):
 
 
 
-
-@app.get("/api/posts")
+# api pages -----------------------------------------------
+@app.get("/api/posts", response_model=list[PostResponse])
 def get_posts():
     return posts
 
-@app.get("/api/posts/{post_id}")
+@app.get("/api/posts/{post_id}", response_model=PostResponse)
 def get_post(post_id: int):
     for post in posts:
         if post.get("id") == post_id:
             return post
     raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Couldn't find this post")
+
+@app.post("/api/posts", response_model=PostResponse, status_code=status.HTTP_201_CREATED,)
+def create_post(post: PostCreate):
+    new_id = 0
+    if posts:
+        ids = []
+        for p in posts:
+            ids.append(p["id"])
+        new_id = max(ids) + 1
+    else:
+        new_id = 1
+    new_post = {
+        "id": new_id,
+        "author": post.author,
+        "title": post.title,
+        "content": post.content,
+        "date_posted": "December 25, 2026",
+    }
+    posts.append(new_post)
+    return new_post
+# --------------------------------------------------------
 
 # Error handling -----------------------------------------
 @app.exception_handler(StarletteHTTPException)
@@ -93,3 +115,4 @@ def validation_exception(request: Request, execption: RequestValidationError):
         )
     
     return template.TemplateResponse(request, "error.html", {"status_code": status.HTTP_422_UNPROCESSABLE_CONTENT, "title": status.HTTP_422_UNPROCESSABLE_CONTENT, "message": "Invalid request. Please check your input and try again."}, status_code=status.HTTP_422_UNPROCESSABLE_CONTENT,)
+# ---------------------------------------------------------
