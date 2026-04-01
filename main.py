@@ -55,7 +55,7 @@ def post_page(request: Request, post_id: int):
 
 
 
-# api pages -----------------------------------------------
+# api pages ------------------------------------------------
 @app.get("/api/posts", response_model=list[PostResponse])
 def get_posts():
     return posts
@@ -86,9 +86,9 @@ def create_post(post: PostCreate):
     }
     posts.append(new_post)
     return new_post
-# --------------------------------------------------------
+# ---------------------------------------------------------
 
-# Error handling -----------------------------------------
+# Error handling ------------------------------------------
 @app.exception_handler(StarletteHTTPException)
 def general_http_exception_handler(request: Request, exception: StarletteHTTPException):
     message = (
@@ -115,4 +115,4 @@ def validation_exception(request: Request, execption: RequestValidationError):
         )
     
     return template.TemplateResponse(request, "error.html", {"status_code": status.HTTP_422_UNPROCESSABLE_CONTENT, "title": status.HTTP_422_UNPROCESSABLE_CONTENT, "message": "Invalid request. Please check your input and try again."}, status_code=status.HTTP_422_UNPROCESSABLE_CONTENT,)
-# ---------------------------------------------------------
+# ----------------------------------------------------------
