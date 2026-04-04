@@ -41,7 +41,7 @@ posts: list[dict] = [
 
 @app.get("/", include_in_schema=False, name="home")
 @app.get("/posts", include_in_schema=False ,name="posts")
-def home(request: Request):
+def home_page(request: Request):
     return template.TemplateResponse(request, "home.html", {"posts": posts, "title": "Home"})
 
 @app.get("/posts/{post_id}", include_in_schema=False)
