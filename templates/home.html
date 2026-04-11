@@ -2,15 +2,20 @@
 {% block content %}
     {% for info in posts %}
         <div class="container">
-            <div class="author-and-date">
-                <a class="author" href="#">{{ info.author }}</a>
-                <small class="date_posted">{{ info.date_posted }}</small>
-            </div>
-            <hr class="post-line">
-            <h2>
-            <a class="title" href = "{{url_for('post_page', post_id=info.id)}}">{{ info.title }}</a>
-            </h2>
-            <p class="content">{{ info.content }}</p>
+            <div class="full_post">
+                <img class="profile_pic" src="{{ url_for('static', path='profile_pics/defaultavatar.jpg') }}" alt="A profile picture of {{ info.author }}">
+                <div class="post-content">
+                <div class="author-and-date">
+                    <a class="author" href="#">{{ info.author }}</a>
+                    <small class="date_posted">{{ info.date_posted }}</small>
+                </div>
+                <hr class="post-line">
+                <h2>
+                <a class="title" href = "{{url_for('post_page', post_id=info.id)}}">{{ info.title }}</a>
+                </h2>
+                <p class="content">{{ info.content }}</p>
+                </div>
+            </div>    
         </div>
     {% endfor %}
 {% endblock content %}

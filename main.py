@@ -55,7 +55,7 @@ def post_page(request: Request, post_id: int):
 
 
 
-# api pages -----------------------------------------------
+# api endpoints -----------------------------------------------
 @app.get("/api/posts", response_model=list[PostResponse])
 def get_posts():
     return posts
