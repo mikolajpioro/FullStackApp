@@ -10,7 +10,9 @@ main {
     flex-direction: row;
     justify-content: center;
     padding: 20px;
-    gap: 30px; 
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .nav {
@@ -55,7 +57,7 @@ main {
 .login-button {
     color: beige;
     background-color: transparent;
-    border: 2px, solid, beige;
+    border: 2px solid beige;
     border-radius: 5px;
     padding: 10px;
     font-weight: bold;
@@ -113,6 +115,7 @@ a {
 .posts-container {
     display: flex;
     flex-direction: column;
+    flex: 3;
 }
 
 .author {
@@ -140,8 +143,8 @@ a {
     color: beige;
     margin: 0;
     inline-size: 100%;
+    word-break: break-word;
     overflow-wrap: break-word;
-    word-break: break-all;
 }
 
 .author-and-date {
@@ -165,6 +168,7 @@ a {
     height: 350px;
     margin-right: 5%;
     margin-top: 20px;
+    flex: 2;
 }
 
 .sidebar-container p {
