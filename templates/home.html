@@ -3,11 +3,11 @@
     {% for info in posts %}
         <div class="container">
             <div class="full_post">
-                <img class="profile_pic" src="{{ url_for('static', path='profile_pics/defaultavatar.jpg') }}" alt="A profile picture of {{ info.author }}">
+                <img class="profile_pic" src="{{ info.author.image_path }}" alt="A profile picture of {{ info.author.username }}">
                 <div class="post-content">
                 <div class="author-and-date">
-                    <a class="author" href="#">{{ info.author }}</a>
-                    <small class="date_posted">{{ info.date_posted }}</small>
+                    <a class="author" href="#">{{ info.author.username }}</a>
+                    <small class="date_posted">{{ info.date_posted.strftime('%B %d, %Y') }}</small>
                 </div>
                 <hr class="post-line">
                 <h2>
@@ -19,3 +19,5 @@
         </div>
     {% endfor %}
 {% endblock content %}
+
+<!-- i need to add the users posts page!!! 50:30  on my line 9-->

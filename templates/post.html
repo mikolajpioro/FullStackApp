@@ -2,11 +2,11 @@
 {% block content %}
         <div class="container">
             <div class="full_post">
-                <img class="profile_pic" src="{{ url_for('static', path='profile_pics/defaultavatar.jpg') }}" alt="A profile picture of {{ post.author }}">
+                <img class="profile_pic" src="{{ post.author.image_path }}" alt="A profile picture of {{ post.author.username }}">
                 <div class="post-content">
                 <div class="author-and-date">
                     <a class="author" href="#">{{ post.author }}</a>
-                    <small class="date_posted">{{ post.date_posted }}</small>
+                    <small class="date_posted">{{ post.date_posted.strftime('%B %d, %Y') }}</small>
                 </div>
                 <hr class="post-line">
                 <h2>
