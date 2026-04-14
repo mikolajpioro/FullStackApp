@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block content %}
+
+    <h1 class="posts_by">Posts by {{ user.username }}</h1>
+    {% for post in posts %}
+        <div class="container">
+            <div class="full_post">
+                <img class="profile_pic" src="{{ post.author.image_path }}" alt="A profile picture of {{ post.author.username }}">
+                <div class="post-content">
+                <div class="author-and-date">
+                    <a class="author" href="#">{{ post.author.username }}</a>
+                    <small class="date_posted">{{ post.date_posted.strftime('%B %d, %Y') }}</small>
+                </div>
+                <hr class="post-line">
+                <h2>
+                <a class="title" href="#">{{ post.title }}</a>
+                </h2>
+                <p class="content">{{ post.content }}</p>
+                <hr class="post-line">
+                <div class="post-buttons">
+                    <button id="edit-button">Edit Post</button>
+                    <button id="delete-button">Delete Post</button>
+                </div>
+            </div>
+            </div>
+        </div>
+    {% else %}
+        <p class="no_posts">No posts by this user yet</p>
+    {% endfor %}
+
+{% endblock content %}

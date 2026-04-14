@@ -42,7 +42,7 @@ def post_page(request: Request, post_id: int, db: Annotated[Session, Depends(get
         return template.TemplateResponse(
             request,
             "post.html",
-            {"post": post, "title": title}
+            {"post": post, "title": title},
         )
     else:
         raise HTTPException(
@@ -51,6 +51,22 @@ def post_page(request: Request, post_id: int, db: Annotated[Session, Depends(get
         )
 
 # add users posts page: 43:08
+@app.get("/users/{user_id}/posts", include_in_schema=False)
+def user_posts_page(request: Request, user_id: int, db: Annotated[Session, Depends(get_db)]):
+    result = db.execute(select(models.User).where(models.User.id == user_id))
+    user = result.scalars().first()
+    if not user:
+        raise HTTPException(
+            status_code = status.HTTP_404_NOT_FOUND,
+            detail = "User not found",
+        )
+    result = db.execute(select(models.Post).where(models.Post.user_id == user_id))
+    posts = result.scalars().all()
+    return template.TemplateResponse(
+        request,
+        "user_posts.html",
+        {"posts": posts, "user": user, "title": f"{user.username}'s Posts"},
+    )
 
 
 # api endpoints -----------------------------------------------

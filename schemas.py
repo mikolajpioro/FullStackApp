@@ -15,8 +15,6 @@ class UserResponse(UserBase):
     image_file: str | None
     image_path: str
 
-
-
 class PostBase(BaseModel):
     title: str = Field(min_length=1, max_length=50)
     content: str = Field(min_length=1)
