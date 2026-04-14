@@ -5,7 +5,7 @@
                 <img class="profile_pic" src="{{ post.author.image_path }}" alt="A profile picture of {{ post.author.username }}">
                 <div class="post-content">
                 <div class="author-and-date">
-                    <a class="author" href="#">{{ post.author }}</a>
+                    <a class="author" href="#">{{ post.author.username }}</a>
                     <small class="date_posted">{{ post.date_posted.strftime('%B %d, %Y') }}</small>
                 </div>
                 <hr class="post-line">

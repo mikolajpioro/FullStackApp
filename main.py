@@ -136,7 +136,8 @@ def create_post(post: PostCreate, db: Annotated[Session, Depends(get_db)]):
             status_code = status.HTTP_404_NOT_FOUND,
             detail = "User not found",
         )
-    new_post = models.Post(
+    else:
+        new_post = models.Post(
         title = post.title,
         content = post.content,
         user_id = post.user_id,

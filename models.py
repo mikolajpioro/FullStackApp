@@ -23,7 +23,8 @@ class User(Base):
     def image_path(self) -> str:
         if self.image_file:
             return f"/media/profile_pics/{self.image_file}"
-        return "/static/profile_pics/defaultavatar.jpg"
+        else:
+            return "/static/profile_pics/defaultavatar.jpg"
 
 
 class Post(Base):
