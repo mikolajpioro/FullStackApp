@@ -50,7 +50,6 @@ def post_page(request: Request, post_id: int, db: Annotated[Session, Depends(get
             detail = "Post not found",
         )
 
-# add users posts page: 43:08
 @app.get("/users/{user_id}/posts", include_in_schema=False)
 def user_posts_page(request: Request, user_id: int, db: Annotated[Session, Depends(get_db)]):
     result = db.execute(select(models.User).where(models.User.id == user_id))
