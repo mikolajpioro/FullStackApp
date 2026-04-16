@@ -68,9 +68,9 @@ def user_posts_page(request: Request, user_id: int, db: Annotated[Session, Depen
     )
 
 
-# api endpoints -----------------------------------------------
+# api endpoints ----------------------------------------------
 
-# adding new users to the the database--------
+# adding new users to the the database----------------------------
 @app.post("/api/users", response_model=UserResponse, status_code=status.HTTP_201_CREATED,)
 def create_user(user: UserCreate, db: Annotated[Session, Depends(get_db)]):
     
@@ -113,7 +113,7 @@ def get_user(user_id: int, db: Annotated[Session, Depends(get_db)]):
 
     if user:
         return user
-    else: #nwm czy dobrze 39:00
+    else:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
             detail = "User not found"
