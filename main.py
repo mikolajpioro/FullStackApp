@@ -203,4 +203,4 @@ def validation_exception(request: Request, execption: RequestValidationError):
         )
     
     return template.TemplateResponse(request, "error.html", {"status_code": status.HTTP_422_UNPROCESSABLE_CONTENT, "title": status.HTTP_422_UNPROCESSABLE_CONTENT, "message": "Invalid request. Please check your input and try again."}, status_code=status.HTTP_422_UNPROCESSABLE_CONTENT,)
-# ---------------------------------------------------------
+# --------------------------------------------------------
