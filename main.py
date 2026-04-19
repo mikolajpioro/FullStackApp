@@ -13,12 +13,9 @@ from database import Base, engine, get_db
 
 Base.metadata.create_all(bind = engine)
 
-
 app = FastAPI()
 app.mount('/static', StaticFiles(directory='static'), name='static')
-
 app.mount('/media', StaticFiles(directory='static'), name = 'media')
-
 template = Jinja2Templates(directory='templates')
 
 
@@ -76,16 +73,14 @@ def create_user(user: UserCreate, db: Annotated[Session, Depends(get_db)]):
     
     result = db.execute(select(models.User).where(models.User.username == user.username),)
     existing_user = result.scalars().first()
-
     if existing_user:
         raise HTTPException(
             status_code = status.HTTP_400_BAD_REQUEST,
             detail = "Username already exists",
         )
-    
+
     result = db.execute(select(models.User).where(models.User.email == user.email),)
     existing_email = result.scalars().first()
-
     if existing_email:
         raise HTTPException(
             status_code = status.HTTP_400_BAD_REQUEST,
@@ -102,7 +97,6 @@ def create_user(user: UserCreate, db: Annotated[Session, Depends(get_db)]):
     db.refresh(new_user)
 
     return new_user
-
 
 
 @app.get("/api/users/{user_id}", response_model=UserResponse,)
