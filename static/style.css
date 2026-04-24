@@ -166,7 +166,6 @@ a {
     border-radius: 8px;
     width: 500px;
     height: 350px;
-    margin-right: 5%;
     margin-top: 20px;
     flex: 2;
 }
@@ -244,4 +243,12 @@ li {
     height: 55px;
     border-radius: 30px;
     margin-right: 3%;
+}
+
+.posts_by {
+    margin: 0;
+}
+
+.num_of_posts {
+    margin-top: 0;
 }
