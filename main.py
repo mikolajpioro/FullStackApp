@@ -169,6 +169,8 @@ def get_post(post_id: int, db: Annotated[Session, Depends(get_db)]):
             status_code = status.HTTP_404_NOT_FOUND,
             detail = "Post not found"
         )
+    
+# post updating---------
 
 @app.put("/api/posts/{post_id}", response_model = PostResponse)
 def update_post_full(post_id: int, post_data: PostCreate, db: Annotated[Session, Depends(get_db)]):
@@ -196,6 +198,25 @@ def update_post_full(post_id: int, post_data: PostCreate, db: Annotated[Session,
     db.refresh(post)
     return post
 
+@app.patch("/api/posts/{post_id}", response_model = PostResponse)
+def update_post_partial(post_id: int, post_data: PostUpdate, db: Annotated[Session, Depends(get_db)]):
+    result = db.execute(select(models.Post).where(models.Post.id == post_id))
+    post = result.scalars().first()
+    if not post:
+        raise HTTPException(
+            status_code = status.HTTP_404_NOT_FOUND,
+            detail = "Post not found"
+        )
+    
+    update_data = post_data.model_dump(exclude_unset = True)
+    for field, value in update_data.items():
+        setattr(post, field, value)
+
+    db.commit()
+    db.refresh(post)
+    return post
+
+#------------------
 # --------------------------------------------------------
 
 # Error handling -----------------------------------------
