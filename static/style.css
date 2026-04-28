@@ -81,9 +81,9 @@ button:hover {
     background-color: rgb(122, 66, 29);
 }
 
-a:hover {
+/* a:hover {
     background-color: rgb(122, 66, 29);
-}
+} */
 
 a {
     border-radius: 5px;
@@ -137,6 +137,10 @@ a {
     font-size: 30px;
     margin-top: 0;
     margin-bottom: 5px;
+}
+
+.title:hover {
+    color: rgb(222, 158, 71);
 }
 
 .content {
